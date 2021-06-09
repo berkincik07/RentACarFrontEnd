@@ -1,0 +1,23 @@
+<mat-toolbar color="accent">
+  <span>{{dialogHeader}}</span>
+</mat-toolbar>
+<div class="container">
+  <form [formGroup]="form">
+    <mat-form-field appearance0="outline">
+      <mat-label>Müşteri Adı Soyadı</mat-label>
+      <input matInput placeholder="Müşteri Adı Soyadı" formControlName="customerName" name="customerName" required type="text">
+    </mat-form-field>
+    <mat-form-field appearance0="outline">
+      <mat-label>Müşteri Doğum Tarihi</mat-label>
+      <input matInput placeholder="Müşteri Doğum Tarihi" formControlName="customerBirthDate" name="customerBirthDate" required type="date">
+    </mat-form-field>
+    <mat-form-field appearance0="outline">
+      <mat-label>Müşteri Mail</mat-label>
+      <input matInput placeholder="Müşteri Mail" formControlName="customerMail" name="customerMail" required type="text">
+    </mat-form-field>
+
+  </form>
+
+  <button mat-raised-button color="primary" (click)="dialogRef.close(form.value)" [disabled]="form.invalid" >Kaydet</button>&nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>
+</div>

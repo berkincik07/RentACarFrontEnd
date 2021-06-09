@@ -1,0 +1,72 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>Müşteri Seç</span>
+</mat-toolbar>
+
+<div class="container">
+  <br>
+ <div>
+<mat-form-field appearance="outline">
+  <input matInput placeholder="Müşteri ara" (keyup)="filter($event)">
+</mat-form-field>
+</div>
+
+
+
+  <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z6">
+  
+
+    <ng-container matColumnDef="customerId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Id
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerId}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="customerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Ad Soyad
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerBirthDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Doğum Tarihi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerBirthDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerCarCount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşterinin kiraladığı araç sayısı
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerCarCount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerMail">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Mail
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerMail}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="process">
+      <mat-header-cell *matHeaderCellDef> İşlemler
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer">
+
+     
+        <button mat-icon-button>
+          <mat-icon aria-label="label" color="primary" matTooltip="Müşteri Seç" (click)="pickedCustomer(customer)">person_add</mat-icon> Seç
+        </button>
+   
+
+
+      </mat-cell>
+    </ng-container>
+   
+    <!-- press ctrl + space to add more column snippet or delete this line -->
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+   <mat-paginator
+         [pageSizeOptions]="[5, 10, 25, 100,500]" showFirstLastButtons>
+   </mat-paginator>
+</div>

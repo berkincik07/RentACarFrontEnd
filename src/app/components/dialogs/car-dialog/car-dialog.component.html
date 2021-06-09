@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>{{dialogHeader}}</span>
+</mat-toolbar>
+<div class="container">
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Model</mat-label>
+      <input matInput placeholder="Model" name="carModelName" formControlName="carModelName" required type="text">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Model Yılı</mat-label>
+      <input matInput placeholder="Model Yılı" name="carModelYear" formControlName="carModelYear" required type="text">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Günlük Fiyat</mat-label>
+      <input matInput placeholder="Günlük Fiyat" name="carDailyPrice" formControlName="carDailyPrice" required type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput required  name="carDescription" formControlName="carDescription" id="carDescription" cols="30" rows="10" placeholder="Açıklama"></textarea>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary" (click)="dialogRef.close(form.value)" [disabled]="form.invalid">Kaydet</button>&nbsp;
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>
+</div>

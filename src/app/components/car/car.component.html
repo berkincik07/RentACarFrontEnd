@@ -1,0 +1,108 @@
+<div class="container">
+  <h1>Araçlar</h1>
+  <div>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Araç ara" (keyup)="filter($event)">
+    </mat-form-field>
+    </div>
+
+  <button mat-fab color="primary" matTooltip="Araç ekle" (click)="add()">
+    <mat-icon aria-label="label">add</mat-icon>
+  </button>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z6" matSort>
+
+    <ng-container matColumnDef="carPhoto">
+      <mat-header-cell *matHeaderCellDef> 
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car">
+        
+        <!-- Araç foto ekleme yap <img [src]="apiService.siteUrl+'/files/placeholder.png'" style="width: 100px;" matTooltip="Fotoğraf Güncelle" (click)="updatePhoto(car)"> -->
+      
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="carId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Araç Id
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car"> {{car.carId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerCount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Sayısı
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car"> {{car.customerCount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="modelName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Araç Modeli
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car"> {{car.modelName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="modelYear">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Model Yılı
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car"> {{car.modelYear}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dailyPrice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Günlük Fiyat
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car"> {{car.dailyPrice}} </mat-cell>
+    </ng-container>
+
+
+<!-- 
+    <ng-container matColumnDef="process">
+      <mat-header-cell *matHeaderCellDef> İşlemler
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer">
+
+        <button mat-icon-button matTooltip="Müşteri Listele" [routerLink]="['/listcars',customer.customerId]">
+          <mat-icon aria-label="label" color="primary">article</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon aria-label="label" color="primary" matTooltip="Müşteri Düzenle" (click)="edit(customer)">edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon aria-label="label" color="warn" matTooltip="Müşteri Sil" (click)="delete(customer)">delete</mat-icon>
+        </button>
+
+
+      </mat-cell>
+    </ng-container> -->
+
+
+    <ng-container matColumnDef="process">
+      <mat-header-cell *matHeaderCellDef> İşlemler
+      </mat-header-cell>
+      <mat-cell *matCellDef="let car">
+
+        <button mat-icon-button color="primary" matTooltip="Araç listele" [routerLink]="['/listcustomer',car.carId]" >
+          <mat-icon aria-label="label" >person</mat-icon>
+        </button>
+
+        <button mat-icon-button matTooltip="Araç düzenle"(click)="update(car)" color="primary" >
+          <mat-icon  aria-label="label" >edit</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="delete(car)" color="warn" matTooltip="Araç sil" >
+          <mat-icon   aria-label="label">delete</mat-icon>
+        </button>
+
+      </mat-cell>
+    </ng-container>
+
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator 
+        [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+  </mat-paginator>
+
+</div>

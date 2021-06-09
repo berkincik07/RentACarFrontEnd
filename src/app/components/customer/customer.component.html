@@ -1,0 +1,87 @@
+<div class="container">
+  <br>
+<h1>Müşteriler</h1>
+ <div>
+<mat-form-field appearance="outline">
+  <input matInput placeholder="Müşteri ara" (keyup)="filter($event)">
+</mat-form-field>
+</div>
+
+<button mat-fab matTooltip="Müşteri Ekle" color="primary" (click)="add()">
+  <mat-icon aria-label="label">add</mat-icon>
+</button>
+
+
+
+  <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z6">
+    <ng-container matColumnDef="customerPhoto">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Fotoğraf
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer">
+        
+        <!-- +customer.customerPhoto -->
+        <img [src]="apiService.siteUrl+'/files/placeholder.png'" style="width: 100px;" matTooltip="Fotoğraf Güncelle" (click)="updatePhoto(customer)">
+      
+      
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Id
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerId}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="customerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Ad Soyad
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerBirthDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Doğum Tarihi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerBirthDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerCarCount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşterinin kiraladığı araç sayısı
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerCarCount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="customerMail">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Müşteri Mail
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{customer.customerMail}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="process">
+      <mat-header-cell *matHeaderCellDef> İşlemler
+      </mat-header-cell>
+      <mat-cell *matCellDef="let customer">
+
+        <button mat-icon-button matTooltip="Müşteri Listele" [routerLink]="['/listcars',customer.customerId]">
+          <mat-icon aria-label="label" color="primary">article</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon aria-label="label" color="primary" matTooltip="Müşteri Düzenle" (click)="edit(customer)">edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon aria-label="label" color="warn" matTooltip="Müşteri Sil" (click)="delete(customer)">delete</mat-icon>
+        </button>
+
+
+      </mat-cell>
+    </ng-container>
+   
+    <!-- press ctrl + space to add more column snippet or delete this line -->
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+   <mat-paginator
+         [pageSizeOptions]="[5, 10, 25, 100,500]" showFirstLastButtons>
+   </mat-paginator>
+</div>

@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>Fotoğraf Güncelle</span>
+</mat-toolbar>
+<div class="container">
+  <div *ngIf="pickedCustomer">
+    <h3><b>{{pickedCustomer.customerName}}</b></h3>
+    <img [src]="apiService.siteUrl+'Files/' + pickedCustomer.customerPhoto" width="200px">
+  </div>
+<img [src]="pickedPhoto" *ngIf="pickedPhoto" style="width: 200px;">
+<p></p>
+  <input type="file" hidden #photo onclick="this.value=null" (change)="pickPhoto($event)">
+<button mat-raised-button color="primary" (click)="photo.click()">Fotoğraf Seç</button>&nbsp;
+
+  <button mat-raised-button color="primary" (click)="photoDialogRef.close(customerPhoto)">Kaydet</button>
+  <button mat-raised-button color="warn" (click)="photoDialogRef.close()" >İptal</button>
+</div>

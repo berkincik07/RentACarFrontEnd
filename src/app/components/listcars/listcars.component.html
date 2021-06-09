@@ -1,0 +1,79 @@
+<div class="container">
+  <h1>Müşterinin kiraladığı araçlar</h1>
+  <h3><b>Müşteri Ad Soyad :  </b>{{pickedCustomer?.customerName}}</h3>
+  <h3><b>Müşteri Mail :  </b>{{pickedCustomer?.customerMail}}</h3>
+
+
+  <button mat-fab color="primary" matTooltip="Geri Dön" [routerLink]="['/musteri']">
+    <mat-icon aria-label="label">arrow_back</mat-icon>
+  </button>
+<p>&nbsp; </p>
+  <mat-form-field appearance="outline" style="width: 50%;">
+    <mat-label>Araç Seçiniz</mat-label>
+    <mat-select placeholder="Araç seçiniz." (selectionChange)="pickCar($event.value)">
+      <mat-option [value]="'car.carId'" *ngFor="let car of cars">{{car.modelName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;&nbsp; <button mat-fab color="primary" matTooltip="Araç Ekle" (click)="save()">
+    <mat-icon aria-label="label">add</mat-icon>
+  </button>
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="carId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Araç Id
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record"> {{record.carInformation.carId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="modelName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Model
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record"> {{record.carInformation.modelName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="modelYear">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Model Yılı
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record"> {{record.carInformation.modelYear}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dailyPrice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Günlük Fiyat
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record"> {{record.carInformation.dailyPrice}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rentDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Kiralama Tarihi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record"> {{record.carInformation.rentDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="returnDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Araç Teslim Tarihi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record"> {{record.carInformation.returnDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="process">
+      <mat-header-cell *matHeaderCellDef> 
+      </mat-header-cell>
+      <mat-cell *matCellDef="let record">
+
+        <button mat-icon-button color="warn" matTooltip="Araç Kaydını Sil" (click)="delete(record)">
+          <mat-icon aria-label="label">delete</mat-icon>
+        </button>
+
+      </mat-cell>
+    </ng-container>
+    
+  
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator 
+        [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+  </mat-paginator>
+</div>

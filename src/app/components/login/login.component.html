@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Giriş Yap</h2>
+  <mat-form-field appearance="outline" style="width:51%">
+    <mat-label>Kullanıcı Adı</mat-label>
+    <input matInput placeholder="Kullanıcı Adı" type="email" #customerUsername>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline" style="width:51%">
+    <mat-label>Şifre</mat-label>
+    <input matInput placeholder="Şifre" type="password" #password>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" style="width: 10%;" (click)="Login(customerUsername.value,password.value)">Giriş</button>
+</div>
