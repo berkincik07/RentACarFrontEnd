@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AlertDialogComponent } from './components/dialogs/alert-dialog/alert-dialog.component';
 import { MyAlertService } from './services/my-Alert.service';
 import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { CarComponent } from './components/car/car.component';
 import { CustomerComponent } from './components/customer/customer.component';
@@ -20,6 +20,9 @@ import { CarDialogComponent } from './components/dialogs/car-dialog/car-dialog.c
 import { ListcustomersComponent } from './components/listcustomers/listcustomers.component';
 import { PickcustomerDialogComponent } from './components/dialogs/pickcustomer-dialog/pickcustomer-dialog.component';
 import { LoginComponent } from './components/login/login.component';
+import { ApiService } from './services/api.service';
+import { AuthInterceptor } from './services/AuthInterceptor';
+import { AuthGuard } from './services/AuthGuard';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { LoginComponent } from './components/login/login.component';
     CarDialogComponent,
     PickcustomerDialogComponent
   ],
-  providers: [MyAlertService],
+  providers: [MyAlertService,ApiService, AuthGuard,
+  
+  { provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

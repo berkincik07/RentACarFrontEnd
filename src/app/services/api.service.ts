@@ -23,7 +23,7 @@ constructor(
     return this.http.post(this.apiUrl+"/token",data,{headers:reqHeader});
   }
 
-  authControl(){
+  sessionControl(){
     if(localStorage.getItem("token")){
       return true;
     }else{
@@ -31,7 +31,27 @@ constructor(
     }
   }
 
-  
+  authControl(auths:any){
+    var result:boolean= false;
+
+    
+    var customerAuths:any = JSON.parse(localStorage.getItem("customerAuths")!);
+
+    if(customerAuths){
+      auths.forEach((element: any) => {
+        if(customerAuths.indexOf(element)> -1){
+          result = true;
+          return false;
+        }
+        return true;
+
+      });
+      return result
+    }
+    return result;
+  }
+
+
 
   // Müşteri işlemleri
 

@@ -6,13 +6,17 @@ import { HomeComponent } from './components/home/home.component';
 import { ListcarsComponent } from './components/listcars/listcars.component';
 import { ListcustomersComponent } from './components/listcustomers/listcustomers.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './services/AuthGuard';
 
 const routes: Routes = [
   {
     path:"", component:HomeComponent
   },
   {
-    path:"arac", component:CarComponent
+    path:"arac", component:CarComponent,canActivate : [AuthGuard],data:{
+      auths:["admin"],
+      redirect:'/login'
+    }
   },
   {
      path:"musteri", component:CustomerComponent

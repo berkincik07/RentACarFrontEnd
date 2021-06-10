@@ -22,7 +22,7 @@ export class MainNavComponent implements OnInit {
     public apiService : ApiService,
     ) {}
   ngOnInit(): void {
-    if (this.apiService.authControl()){
+    if (this.apiService.sessionControl()){
       this.customerUsername != localStorage.getItem("customerUsername");
     }
   }
