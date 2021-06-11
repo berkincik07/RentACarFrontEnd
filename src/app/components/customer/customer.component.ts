@@ -11,6 +11,9 @@ import { MyAlertService } from 'src/app/services/my-Alert.service';
 import { AddphotoDialogComponent } from '../dialogs/addphoto-dialog/addphoto-dialog.component';
 import { ConfirmDialogComponent } from '../dialogs/confirm-dialog/confirm-dialog.component';
 import { CustomerDialogComponent } from '../dialogs/customer-dialog/customer-dialog.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-customer',
@@ -18,6 +21,11 @@ import { CustomerDialogComponent } from '../dialogs/customer-dialog/customer-dia
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
   customers!:Customer[];
   displayedColumns=['customerPhoto','customerId','customerName','customerBirthDate','customerMail','customerCarCount',"process"]
   dataSource:any;
@@ -29,7 +37,8 @@ confirmDialogRef!:MatDialogRef<ConfirmDialogComponent>;
 constructor(
     public apiService:ApiService,
     public matDialog:MatDialog,
-    public alert:MyAlertService
+    public alert:MyAlertService,
+    private breakpointObserver: BreakpointObserver
   ) { }
 
   ngOnInit() {

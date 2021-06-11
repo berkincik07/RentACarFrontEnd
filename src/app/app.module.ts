@@ -4,13 +4,14 @@ import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './components/home/home.component';
 import { AlertDialogComponent } from './components/dialogs/alert-dialog/alert-dialog.component';
 import { MyAlertService } from './services/my-Alert.service';
 import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { CarComponent } from './components/car/car.component';
+import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CustomerDialogComponent } from './components/dialogs/customer-dialog/customer-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +28,7 @@ import { AuthGuard } from './services/AuthGuard';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    DashboardComponent,
     MainNavComponent,
     LoginComponent,
     CarComponent,
@@ -39,7 +40,8 @@ import { AuthGuard } from './services/AuthGuard';
     CustomerDialogComponent,
     AddphotoDialogComponent,
     CarDialogComponent,
-    PickcustomerDialogComponent
+    PickcustomerDialogComponent,
+    HomeComponent
 
   ],
   imports: [

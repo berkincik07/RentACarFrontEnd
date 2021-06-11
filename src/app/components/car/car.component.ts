@@ -9,6 +9,9 @@ import { ApiService } from 'src/app/services/api.service';
 import { MyAlertService } from 'src/app/services/my-Alert.service';
 import { CarDialogComponent } from '../dialogs/car-dialog/car-dialog.component';
 import { ConfirmDialogComponent } from '../dialogs/confirm-dialog/confirm-dialog.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-car',
@@ -16,6 +19,11 @@ import { ConfirmDialogComponent } from '../dialogs/confirm-dialog/confirm-dialog
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
+isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
 confirmDialogRef!:MatDialogRef<ConfirmDialogComponent>;
 cars !: Car[];
 dataSource: any;
@@ -26,7 +34,8 @@ dialogRef!:MatDialogRef<CarDialogComponent>;
   constructor(
     public apiService : ApiService,
     public alert: MyAlertService,
-    public matDialog: MatDialog
+    public matDialog: MatDialog,
+    private breakpointObserver: BreakpointObserver
   ) { }
 
   ngOnInit() {
