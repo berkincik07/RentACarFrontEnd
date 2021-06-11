@@ -24,6 +24,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ApiService } from './services/api.service';
 import { AuthInterceptor } from './services/AuthInterceptor';
 import { AuthGuard } from './services/AuthGuard';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AuthGuard } from './services/AuthGuard';
     AddphotoDialogComponent,
     CarDialogComponent,
     PickcustomerDialogComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
 
   ],
   imports: [

@@ -13,7 +13,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Ekibimiz</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
-                        <li class="nav-item bg-warning rounded" id="login"><a class="nav-link" style="color: black;" href="#contact">Giriş Yap</a></li>
+                        <li class="nav-item bg-warning rounded" id="login"><a class="nav-link" style="color: black;" [routerLink]="['/login']" routerLinkActive="router-link-active" >Giriş Yap</a></li>
                     </ul>
                 </div>
             </div>
@@ -75,11 +75,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/assets/img/portfolio/car1.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-heading">Renault Symbol</div>
+                                <div class="portfolio-caption-subheading text-muted">Ekonomi</div>
                             </div>
                         </div>
                     </div>
@@ -90,11 +90,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/assets/img/portfolio/2.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/assets/img/portfolio/car2.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                                <div class="portfolio-caption-heading">Renault Clio</div>
+                                <div class="portfolio-caption-subheading text-muted">Ekonomi</div>
                             </div>
                         </div>
                     </div>
@@ -105,11 +105,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/assets/img/portfolio/3.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/assets/img/portfolio/car3.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                                <div class="portfolio-caption-heading">Ford Focus</div>
+                                <div class="portfolio-caption-subheading text-muted">Kompakt</div>
                             </div>
                         </div>
                     </div>
@@ -120,11 +120,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/assets/img/portfolio/4.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/assets/img/portfolio/car4.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                                <div class="portfolio-caption-heading">Jeep Renegade</div>
+                                <div class="portfolio-caption-subheading text-muted">Premium</div>
                             </div>
                         </div>
                     </div>
@@ -135,11 +135,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/assets/img/portfolio/5.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/assets/img/portfolio/car5.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                                <div class="portfolio-caption-heading">Citroen C Elysee</div>
+                                <div class="portfolio-caption-subheading text-muted">Orta</div>
                             </div>
                         </div>
                     </div>
@@ -153,11 +153,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/assets/img/portfolio/6.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/assets/img/portfolio/car6.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                                <div class="portfolio-caption-heading">BMW 216 D Gran Coupé</div>
+                                <div class="portfolio-caption-subheading text-muted">Premium</div>
                             </div>
                         </div>
                     </div>
@@ -381,23 +381,26 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <h2 class="text-uppercase">Renault Symbol</h2>
+                                    <p class="item-intro text-muted">Ekonomi Sınıfı</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/car1.png" alt="..." />
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Threads
+                                            <strong>Günlük Fiyat:</strong>
+                                            250 TL
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Illustration
+                                            <strong>Model Yılı:</strong>
+                                            2015
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" [routerLink]="['/login']" type="button">
                                         <i class="fas fa-times me-1"></i>
-                                        Close Project
+                                        Kirala
+                                    </button> <br>
+                                    <button class="btn mt-1 btn-primary btn-m text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kapat
                                     </button>
                                 </div>
                             </div>
@@ -416,24 +419,28 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <h2 class="text-uppercase">Renault Clio</h2>
+                                    <p class="item-intro text-muted">Ekonomi Sınıfı</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/car2.png" alt="..." />
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Explore
+                                            <strong>Günlük Fiyat:</strong>
+                                            260 TL
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
+                                            <strong>Model Yılı:</strong>
+                                            2014
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" [routerLink]="['/login']" type="button">
                                         <i class="fas fa-times me-1"></i>
-                                        Close Project
+                                        Kirala
+                                    </button> <br>
+                                    <button class="btn mt-1 btn-primary btn-m text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kapat
                                     </button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -451,24 +458,28 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <h2 class="text-uppercase">Ford Focus</h2>
+                                    <p class="item-intro text-muted">Kompakt Sınıf</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/car3.png" alt="..." />
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Finish
+                                            <strong>Günlük Fiyat:</strong>
+                                            330 TL
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Identity
+                                            <strong>Model Yılı:</strong>
+                                            2017
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" [routerLink]="['/login']" type="button">
                                         <i class="fas fa-times me-1"></i>
-                                        Close Project
+                                        Kirala
+                                    </button> <br>
+                                    <button class="btn mt-1 btn-primary btn-m text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kapat
                                     </button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -486,24 +497,28 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <h2 class="text-uppercase">Jeep Renegade</h2>
+                                    <p class="item-intro text-muted">Premium Sınıf</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/car4.png" alt="..." />
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Lines
+                                            <strong>Günlük Fiyat:</strong>
+                                            459 TL
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Branding
+                                            <strong>Model Yılı:</strong>
+                                            2020
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" [routerLink]="['/login']" type="button">
                                         <i class="fas fa-times me-1"></i>
-                                        Close Project
+                                        Kirala
+                                    </button> <br>
+                                    <button class="btn mt-1 btn-primary btn-m text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kapat
                                     </button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -512,41 +527,6 @@
             </div>
         </div>
         <!-- Portfolio item 5 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Southwest
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Website Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 6 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -556,24 +536,67 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <h2 class="text-uppercase">BMW 216 D Gran Coupé</h2>
+                                    <p class="item-intro text-muted">Premium Sınıf</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/car6.png" alt="..." />
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Window
+                                            <strong>Günlük Fiyat:</strong>
+                                            490,00 TL
                                         </li>
                                         <li>
-                                            <strong>Category:</strong>
-                                            Photography
+                                            <strong>Model Yılı:</strong>
+                                            2021
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" [routerLink]="['/login']" type="button">
                                         <i class="fas fa-times me-1"></i>
-                                        Close Project
+                                        Kirala
+                                    </button> <br>
+                                    <button class="btn mt-1 btn-primary btn-m text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kapat
                                     </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Citroen C Elysee</h2>
+                                    <p class="item-intro text-muted">Orta Sınıf</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/car5.png" alt="..." />
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Günlük Fiyat:</strong>
+                                            419,51 TL
+                                        </li>
+                                        <li>
+                                            <strong>Model Yılı:</strong>
+                                            2012
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-success btn-xl text-uppercase" data-bs-dismiss="modal" [routerLink]="['/login']" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kirala
+                                    </button> <br>
+                                    <button class="btn mt-1 btn-primary btn-m text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Kapat
+                                    </button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -582,40 +605,7 @@
             </div>
         </div>
 
-        <div class="portfolio-modal modal fade" id="myportfolio" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="close-modal" data-bs-dismiss="modal"><img src="assets/assets/img/close-icon.svg" alt="Close modal" /></div>
-                  <div class="container">
-                      <div class="row justify-content-center">
-                          <div class="col-lg-8">
-                              <div class="modal-body">
-                                  <!-- Project details-->
-                                  <h2 class="text-uppercase">Project Name</h2>
-                                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                  <img class="img-fluid d-block mx-auto" src="assets/assets/img/portfolio/6.jpg" alt="..." />
-                                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                  <ul class="list-inline">
-                                      <li>
-                                          <strong>Client:</strong>
-                                          Window
-                                      </li>
-                                      <li>
-                                          <strong>Category:</strong>
-                                          Photography
-                                      </li>
-                                  </ul>
-                                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                      <i class="fas fa-times me-1"></i>
-                                      Close Project
-                                  </button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+       
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
       

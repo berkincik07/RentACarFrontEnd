@@ -16,8 +16,8 @@
 <div class="text-center">
 <main class="form-signin">
   <form>
-
-    <img class="mb-4" src="assets/assets/img/logos/incik-oto.jpeg" alt="" width="72" height="57">
+    <a [routerLink]="['/']">
+    <img class="mb-4" src="assets/assets/img/logos/incik-oto.jpeg" alt="" width="72" height="57"></a>
     <h1 class="h3 mb-3 fw-normal">Giriş Yap</h1>
 
     <div class="form-floating">
@@ -25,8 +25,8 @@
       <label for="floatingInput">Kullanıcı adı</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Parla" #password>
-      <label for="floatingPassword">Parla</label>
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Parola" #password>
+      <label for="floatingPassword">Parola</label>
     </div>
 
     <div class="checkbox mb-3">
@@ -35,6 +35,8 @@
       </label>
     </div>
   <button mat-raised-button type="submit" color="primary" class="w-100 btn btn-lg btn-primary" style="width: 10%;" (click)="Login(customerUsername.value,password.value)">Giriş</button>
+  <br><br><p style="font-size: 20px;">Henüz üye değil misiniz ?</p>
+  <button mat-raised-button type="submit" class="w-100 btn btn-lg btn-warning" style="width: 10%;" [routerLink]="['/register']">Kaydol</button>
   <p class="mt-5 mb-3 text-muted">&copy; İncik Oto</p>
 </form>
 </main></div>

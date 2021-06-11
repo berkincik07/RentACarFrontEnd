@@ -1,0 +1,21 @@
+<div class="text-center">
+  <main class="form-signin">
+    <form>
+  <a [routerLink]="['/']">
+      <img class="mb-4" src="assets/assets/img/logos/incik-oto.jpeg" alt="" width="72" height="57"></a>
+      <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+  
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" placeholder="Kullanıcı Adınız" #customerUsername>
+        <label for="floatingInput">Kullanıcı adı</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Parola" #password>
+        <label for="floatingPassword">Parola</label>
+      </div>
+  
+    <button mat-raised-button type="submit" color="primary" class="w-100 btn btn-lg btn-primary" style="width: 10%;" [routerLink]="['/login']" routerLinkActive="router-link-active">Kaydol</button>
+    <p class="mt-5 mb-3 text-muted">&copy; İncik Oto</p>
+  </form>
+  </main></div>
+  
