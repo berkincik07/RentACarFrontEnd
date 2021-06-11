@@ -12,6 +12,7 @@ import { ConfirmDialogComponent } from '../dialogs/confirm-dialog/confirm-dialog
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { AddphotoDialogComponent } from '../dialogs/addphoto-dialog/addphoto-dialog.component';
 
 @Component({
   selector: 'app-car',
@@ -31,6 +32,7 @@ displayedColumns = ['carId','modelName','modelYear','dailyPrice','customerCount'
 @ViewChild(MatSort) sort!:MatSort
 @ViewChild(MatPaginator) paginator!:MatPaginator
 dialogRef!:MatDialogRef<CarDialogComponent>;
+  photoDialogRef!: MatDialogRef<AddphotoDialogComponent>;
   constructor(
     public apiService : ApiService,
     public alert: MyAlertService,
@@ -121,6 +123,25 @@ dialogRef!:MatDialogRef<CarDialogComponent>;
       }
     })
    
+  }
+
+  updatePhoto(car: Car){
+    this.photoDialogRef = this.matDialog.open(AddphotoDialogComponent,{
+      width:'400px',
+      data:car
+    })
+    this.photoDialogRef.afterClosed().subscribe((d : any)=>{
+      if(d){
+        console.log(d);
+        d.carId=car.carId;
+        this.apiService.updateCustomerPhoto(d).subscribe((r:any)=>{
+          this.alert.Alert(r);
+          if(r.process){
+            this.listCars();
+          }
+        })
+      }
+    })
   }
 
 }

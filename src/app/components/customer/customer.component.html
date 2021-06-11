@@ -12,7 +12,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="mat-elevation-z5">
+    <mat-toolbar color="warn" class="mat-elevation-z5">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -22,6 +22,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>İncik Araç Kiralama</span>
+      <button mat-button class="btn text-white" [routerLink]="['/']" style="margin-left: 80%;">Çıkış Yap</button>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>
@@ -35,7 +36,7 @@
 </mat-form-field>
 </div>
 
-<button mat-fab matTooltip="Müşteri Ekle" color="primary" (click)="add()">
+<button mat-fab matTooltip="Müşteri Ekle" color="warn" (click)="add()">
   <mat-icon aria-label="label">add</mat-icon>
 </button>
 
