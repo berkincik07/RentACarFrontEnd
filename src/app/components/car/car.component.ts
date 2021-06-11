@@ -65,7 +65,7 @@ dialogRef!:MatDialogRef<CarDialogComponent>;
   var newCar:Car = new Car();
   this.dialogRef = this.matDialog.open(CarDialogComponent,{
     width:'400px',
-    data:{
+    data:{ 
       car!: newCar,
       process: 'add'
     }

@@ -28,25 +28,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(){
   }
 
-  OpenAlert(p:boolean){
 
-    var r:Result = new Result();
-    r.success = p
-    r.message = "Alert mesajıdır...";
-
-    this.alert.Alert(r);
-  }
-
-  OpenConfirm(){
-    this.confirmDialogRef = this.matDialog.open(ConfirmDialogComponent,{
-      width:'400px'
-    });
-    this.confirmDialogRef.componentInstance.dialogMessage = "Araç silinecektir onaylıyor musunuz ? ";
-    this.confirmDialogRef.afterClosed().subscribe(d=>{
-      console.log(d);
-      if(d){
-        // Silme
-      }
-    })
-  }
+  
 }
